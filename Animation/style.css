@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 900px;
+  background-color: ccc;
+}
+
+#box1 {
+  height: 200px;
+  width: 200px;
+  background-color: lightseagreen;
+  position: absolute;
+  animation-name: anime;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.3, 0.64, 0.73, 0.5);
+  animation-direction: alternate;
+}
+
+.one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
+.one h1 {
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 10px;
+  background-color: #000;
+  bottom: -5px;
+  left: 0;
+}
+
+h1:hover::after {
+  animation-name: lineanime;
+  animation-duration: 2s;
+}
+
+@keyframes anime {
+  0% {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: lightgreen;
+    rotate: 0deg;
+  }
+  20% {
+    left: 75%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: lightsalmon;
+    rotate: 90deg;
+  }
+  50% {
+    left: 75%;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    background-color: lightpink;
+    rotate: 180deg;
+  }
+  75% {
+    left: 0;
+    top: 50%;
+    right: 75%;
+    bottom: 0;
+    background-color: lightskyblue;
+    rotate: 270deg;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    right: 75%;
+    bottom: 50%;
+    background-color: lightgoldenrodyellow;
+    rotate: 360deg;
+  }
+}
+
+@keyframes lineanime {
+  0% {
+    width: 0%;
+    left: 0%;
+  }
+  50% {
+    width: 100%;
+    left: 0%;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
